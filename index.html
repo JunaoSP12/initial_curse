@@ -2,115 +2,111 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Acme&family=Roboto&family=Roboto+Serif:opsz,wght@8..144,700&family=Roboto+Slab:wght@700&display=swap"
-        rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dev.finance$</title>
+
     <link rel="stylesheet" href="./style.css">
-    <title>RocketCoffee</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-
     <header>
-        <h1> Rocket<span class="coffeeh1">Coffee<span> </h1>
-        <p> Aberto todos os dias. 8h-21h </p>
+        <img src="./assets/logo.svg" alt="Logo Dev Finance">
     </header>
+    <main class="container">
+        <section id="balance">
+            <h2 class="sr-only">Balanço</h2>
 
-    <section>
-        <h2> Brunch </h2>
-        <ul>
-            <li>
-                <div class="details">
-                    <h3 class="product"> Maffle Doce </h3>
-                    <p class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. A error quod voluptatem perspiciatis
-                        quis doloribus
-                    </p>
-                </div>
+            <div class="card">
+                <h3>
+                    <span>Entradas</span>
+                    <img src="./assets/income.svg" alt="Imagem de Entradas">
+                </h3>
+                <p id="incomeDisplay"></p>
 
-                <strong class="price">
-                    R$37,70
-                </strong>
-            </li>
-            <li>
-                <div class="details">
-                    <h3 class="product"> Arroz Doce </h3>
-                    <p class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. A error quod voluptatem perspiciatis
-                        quis doloribus
-                    </p>
-                </div>
+            </div>
+            <div class="card">
+                <h3>
+                    <span>Saídas</span>
+                    <img src="./assets/expense.svg" alt="Imagem de Saídas">
+                </h3>
+                <p id="expenseDisplay"></p>
+            </div>
+            <div class="card total">
+                <h3>
+                    <span>Total</span>
+                    <img src="./assets/total.svg" alt="Imagem de Entradas">
+                </h3>
+                <p id="totalDisplay"></p>
+            </div>
 
-                <strong class="price">
-                    R$37,70
-                </strong>
-            </li>
-            <li>
-                <div class="details">
-                    <h3 class="product"> Maçã Doce </h3>
-                    <p class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. A error quod voluptatem perspiciatis
-                        quis doloribus
-                    </p>
-                </div>
+        </section>
 
-                <strong class="price">
-                    R$17,70
-                </strong>
-            </li>
-        </ul>
+        <section id="transaction">
+            <h2 class="sr-only">Transações</h2>
+
+            <a href="#" onclick="Modal.open()" class="button new">+ Nova Transação</a>
+
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Data</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <div id="form">
+                <h2> Nova Transação</h2>
+                <form action="" onsubmit="Form.submit(event)">
+                    <div class="input-group">
+                        <label class="sr-only" for="description">Descrição</label>
+                        <input type="text" id="description" name="description" placeholder="Descrição" />
+                    </div>
+
+                    <div class="input-group">
+                        <label class="sr-only" for="amount">Valor</label>
+                        <input type="number" step="0.01" id="amount" name="amount" placeholder="0,00" />
+                        <small>Use o sinal - (negativo) para despesas e , (vírgula) para casas decimais</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="sr-only" for="date">Data</label>
+                        <input type="date" id="date" name="date" />
+                    </div>
+
+                    <div class="input-group actions">
+                        <a onclick="Modal.close()" href="#" class="button cancel">Cancelar</a>
+                        <button>Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
 
 
-    </section>
+    <footer>
+        <p>2021 - dev.finance$</p>
+    </footer>
 
-    <section>
-        <h2> Bebidas </h2>
-        <ul>
-            <li>
-                <div class="details">
-                    <h3 class="product"> Vinho </h3>
-                    <p class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. A error quod voluptatem perspiciatis
-                        quis doloribus
-                    </p>
-                </div>
+    <script src="./scripts.js">
 
-                <strong class="price">
-                    R$37,70
-                </strong>
-            </li>
-            <li>
-                <div class="details">
-                    <h3 class="product"> Champanhe </h3>
-                    <p class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. A error quod voluptatem perspiciatis
-                        quis doloribus
-                    </p>
-                </div>
+    </script>
 
-                <strong class="price">
-                    R$37,70
-                </strong>
-            </li>
-            <li>
-                <div class="details">
-                    <h3 class="product"> Tequila </h3>
-                    <p class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. A error quod voluptatem perspiciatis
-                        quis doloribus
-                    </p>
-                </div>
-
-                <strong class="price">
-                    R$17,70
-                </strong>
-            </li>
-        </ul>
-    </section>
 </body>
 
 </html>
